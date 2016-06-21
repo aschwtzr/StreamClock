@@ -19,11 +19,17 @@
     self.menuBackgroundImage.image = [UIImage imageNamed:[defaults objectForKey:@"backgroundImageString"]];
     self.menuBackgroundImage.contentMode = UIViewContentModeScaleAspectFill;
     self.menuBackgroundImage.contentMode = UIViewContentModeCenter;
-    self.pickerData = [[NSArray alloc] initWithObjects: @"Chicago", @"Denver", @"Dubai", @"Hawaii", @"Hong Kong", @"Istanbul", @"London", @"Los Angeles", @"New York City", @"Paris", @"Santiago", @"Sao Paulo", @"Reset Time Zone", nil];
-    NSString *timeZoneName = [[NSTimeZone localTimeZone] abbreviation];
-    self.timeOffset = [[NSArray alloc] initWithObjects:@"CST", @"MDT", @"GST", @"HST", @"HKT", @"EET", @"BST", @"PST", @"EST", @"CET", @"CLT", @"BRT", timeZoneName,  nil];
-    self.timeZonePicker.dataSource = self;
-    self.timeZonePicker.delegate = self;
+    
+    //sets the switches at their default state
+        
+        if ([defaults boolForKey:@"streamToggle"] == YES){
+            [self.liveStreamToggle setOn:YES];
+        }
+        else [self.liveStreamToggle setOn:NO];
+    
+    
+    [self pickerDataSelector];
+    
     
     if ([defaults boolForKey:@"24HourFormat"] == YES){
         [self.clockFormatToggle setOn:YES];
@@ -32,9 +38,35 @@
     
     [self loadBackgroundImages];
     
-
     
 
+}
+
+-(void)pickerDataSelector{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults synchronize];
+    
+    if ([defaults boolForKey:@"streamToggle"] == YES){
+        self.pickerData = [[NSArray alloc] initWithObjects: @"Copacabana Beach", @"Abbey Road", @"The Palm Atlantis", @"Amman City", @"Crimera Roads", @"Costa Rica", @"Statue of Liberty", @"Anguilla Aleta Hotel", @"Reunion Tower", @"Washington Monument", @"Palm Beach", @"Bognor Regis", @"Holden Beach", @"Lake Michigan",  @"Seaside Park", @"Kauai", @"Waikiloa", @"St. Lucie County", @"St. Lucie County Inlet", @"Amsterdam", @"Hungary",nil];
+        self.timeOffset = [[NSArray alloc] initWithObjects:@"BRT", @"BST", @"EET", @"EET", @"EET", @"CST", @"EST", @"CLT", @"CST", @"EST", @"EST", @"BST", @"EST", @"CST", @"EST",@"HST", @"HST", @"EST",@"EST", @"CET", @"CET", nil];
+        self.timeZonePicker.dataSource = self;
+        self.timeZonePicker.delegate = self;
+        [defaults setBool:YES forKey:@"hideBackgroundImage"];
+        [defaults synchronize];
+        
+    }
+    
+    else {
+        self.pickerData = [[NSArray alloc] initWithObjects: @"Chicago", @"Denver", @"Dubai", @"Hawaii", @"Hong Kong", @"Istanbul", @"London", @"Los Angeles", @"New York City", @"Paris", @"Santiago", @"Sao Paulo", @"Reset Time Zone", nil];
+        NSString *timeZoneName = [[NSTimeZone localTimeZone] abbreviation];
+        self.timeOffset = [[NSArray alloc] initWithObjects:@"CST", @"MDT", @"GST", @"HST", @"HKT", @"EET", @"BST", @"PST", @"EST", @"CET", @"CLT", @"BRT", timeZoneName,  nil];
+        self.timeZonePicker.dataSource = self;
+        self.timeZonePicker.delegate = self;
+        [defaults setBool:NO forKey:@"hideBackgroundImage"];
+        [defaults synchronize];
+
+    }
+    
 }
 
 
@@ -42,6 +74,22 @@
 {
     return UIInterfaceOrientationMaskLandscape;
 }
+
+- (IBAction)setLiveStream:(id)sender {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    if ([self.liveStreamToggle isOn]) {
+        [defaults setBool:YES forKey:@"streamToggle"];
+        [defaults synchronize];
+    }
+    else {
+        [defaults setBool:NO forKey:@"streamToggle"];
+        [defaults synchronize];
+    }
+
+}
+
+
 - (IBAction)HourFormat:(id)sender {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
@@ -100,6 +148,11 @@
     
     
     [defaults setObject:timeZonePicked forKey:@"setTimeZone"];
+    if ([self.liveStreamToggle isOn]) {
+        NSString *videoStream = [self.pickerData objectAtIndex:[pickerView selectedRowInComponent:0]];
+        [defaults setObject:videoStream forKey:@"videoStreamLocation"];
+    }
+        
     [defaults synchronize];
     
 }

@@ -19,5 +19,6 @@
 @property NSArray *pickerData;
 @property NSArray *timeOffset;
 @property NSString *timeZonePicked;
+@property (strong, nonatomic) IBOutlet UISwitch *liveStreamToggle;
 
 @end

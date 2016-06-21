@@ -260,10 +260,10 @@
                                     <rect key="frame" x="50" y="289" width="101" height="20"/>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Zone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="owV-NN-2im">
-                                <rect key="frame" x="476" y="197" width="94" height="18"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stream Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="owV-NN-2im">
+                                <rect key="frame" x="451" y="197" width="119" height="18"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="94" id="2Yz-sT-ZFO"/>
+                                    <constraint firstAttribute="width" constant="119" id="2Yz-sT-ZFO"/>
                                     <constraint firstAttribute="height" constant="18" id="82U-xq-8fa"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -355,7 +355,7 @@
                                     <outletCollection property="gestureRecognizers" destination="JBq-Wg-AvU" appends="YES" id="EIT-Uj-Smz"/>
                                 </connections>
                             </view>
-                            <pickerView alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ygl-u0-k7B">
+                            <pickerView alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ygl-u0-k7B">
                                 <rect key="frame" x="370" y="218" width="200" height="136"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                                 <constraints>
@@ -367,6 +367,18 @@
                                     <outlet property="delegate" destination="lcI-2F-M1z" id="6N0-NJ-Byi"/>
                                 </connections>
                             </pickerView>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bl6-Zw-LT2">
+                                <rect key="frame" x="155" y="338" width="51" height="31"/>
+                                <connections>
+                                    <action selector="setLiveStream:" destination="lcI-2F-M1z" eventType="valueChanged" id="5QF-T9-Svc"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Live Steam" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NSf-n4-z6a">
+                                <rect key="frame" x="29" y="343" width="76" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
@@ -382,15 +394,19 @@
                             <constraint firstItem="urX-qz-j9w" firstAttribute="leading" secondItem="Hxt-jb-JiF" secondAttribute="leadingMargin" constant="10" id="DdO-oJ-1Kz"/>
                             <constraint firstItem="4Ua-4r-Omx" firstAttribute="leading" secondItem="urX-qz-j9w" secondAttribute="trailing" constant="31" id="Pjv-WF-k1e"/>
                             <constraint firstItem="Zpj-ys-tyG" firstAttribute="top" secondItem="qve-9V-tHH" secondAttribute="bottom" constant="10" id="QTj-a0-LTV"/>
+                            <constraint firstItem="bl6-Zw-LT2" firstAttribute="leading" secondItem="NSf-n4-z6a" secondAttribute="trailing" constant="50" id="Rfz-8o-t9F"/>
+                            <constraint firstItem="NSf-n4-z6a" firstAttribute="top" secondItem="urX-qz-j9w" secondAttribute="bottom" constant="34" id="SVj-Dr-eFw"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Zpj-ys-tyG" secondAttribute="trailing" constant="20" id="TKa-fI-Fgf"/>
                             <constraint firstItem="Ygl-u0-k7B" firstAttribute="centerY" secondItem="Hxt-jb-JiF" secondAttribute="centerY" constant="-14" id="TrG-d0-FD6"/>
                             <constraint firstItem="BsW-Vm-M8D" firstAttribute="leading" secondItem="Hxt-jb-JiF" secondAttribute="leadingMargin" constant="9" id="Xbd-zg-Z62"/>
+                            <constraint firstItem="NSf-n4-z6a" firstAttribute="leading" secondItem="Hxt-jb-JiF" secondAttribute="leadingMargin" constant="9" id="b4z-Yn-c3W"/>
                             <constraint firstItem="4Ua-4r-Omx" firstAttribute="top" secondItem="JWC-Eh-zHs" secondAttribute="bottom" constant="29" id="ear-BK-y9h"/>
                             <constraint firstItem="N7S-fy-K2K" firstAttribute="centerX" secondItem="Hxt-jb-JiF" secondAttribute="centerX" id="ejZ-YY-3gH"/>
                             <constraint firstItem="BsW-Vm-M8D" firstAttribute="top" secondItem="R4O-Wz-gI1" secondAttribute="bottom" constant="16" id="fWn-EE-2RG"/>
                             <constraint firstAttribute="trailingMargin" secondItem="owV-NN-2im" secondAttribute="trailing" constant="10" id="gqU-3q-O2C"/>
                             <constraint firstItem="Eun-tr-RQ8" firstAttribute="leading" secondItem="jcF-Kj-Uwg" secondAttribute="trailing" constant="12" id="hRT-wO-oFw"/>
                             <constraint firstItem="urX-qz-j9w" firstAttribute="top" secondItem="jcF-Kj-Uwg" secondAttribute="bottom" constant="36" id="lhm-oc-nSZ"/>
+                            <constraint firstItem="bl6-Zw-LT2" firstAttribute="top" secondItem="4Ua-4r-Omx" secondAttribute="bottom" constant="23" id="oyn-QP-23O"/>
                             <constraint firstItem="N7S-fy-K2K" firstAttribute="centerY" secondItem="Hxt-jb-JiF" secondAttribute="centerY" id="p3Q-Hd-2vJ"/>
                             <constraint firstItem="R4O-Wz-gI1" firstAttribute="leading" secondItem="Hxt-jb-JiF" secondAttribute="leadingMargin" constant="10" id="rdF-z5-Rk1"/>
                             <constraint firstItem="4Ua-4r-Omx" firstAttribute="top" secondItem="Eun-tr-RQ8" secondAttribute="bottom" constant="29" id="rz7-Ce-17C"/>
@@ -410,6 +426,7 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
                         <outlet property="clockFormatToggle" destination="4Ua-4r-Omx" id="Dgg-OO-V4g"/>
+                        <outlet property="liveStreamToggle" destination="bl6-Zw-LT2" id="9bl-ih-ZCK"/>
                         <outlet property="menuBackgroundImage" destination="N7S-fy-K2K" id="2k2-EY-J4P"/>
                         <outlet property="timeZonePicker" destination="Ygl-u0-k7B" id="oZD-YI-4Mk"/>
                     </connections>
