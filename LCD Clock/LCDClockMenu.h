@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DAO.h"
 
 @interface LCDClockMenu : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate> 
 
@@ -20,5 +21,6 @@
 @property NSArray *timeOffset;
 @property NSString *timeZonePicked;
 @property (strong, nonatomic) IBOutlet UISwitch *liveStreamToggle;
+@property NSArray *streamsArray;
 
 @end

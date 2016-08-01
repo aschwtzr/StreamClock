@@ -4,11 +4,16 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="DS-DIGI.TTF">
+            <string>DS-Digital</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="EHf-IW-A2E">
             <objects>
-                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="crossDissolve" id="01J-lp-oVM" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Llm-lL-Icb"/>
                         <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
@@ -16,12 +21,33 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="StreamClock" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hyu-Wv-ovM">
+                                <rect key="frame" x="195" y="270" width="210" height="59"/>
+                                <fontDescription key="fontDescription" name="DS-Digital" family="DS-Digital" pointSize="38"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kamogawa3x.png" translatesAutoresizingMaskIntoConstraints="NO" id="p8Y-aX-ZpP">
+                                <rect key="frame" x="-176" y="-15" width="952" height="630"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="p8Y-aX-ZpP" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Hbm-29-hEh"/>
+                            <constraint firstItem="hyu-Wv-ovM" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Pom-cb-Vre"/>
+                            <constraint firstItem="hyu-Wv-ovM" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="hbJ-Lh-CgM"/>
+                            <constraint firstItem="p8Y-aX-ZpP" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="n8E-8p-PQ0"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="420" y="333"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="kamogawa3x.png" width="951" height="630"/>
+    </resources>
 </document>

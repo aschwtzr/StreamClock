@@ -23,6 +23,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.ref = [[FIRDatabase database] reference];
+    [self.ref observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
+        _postDict = snapshot.value;
+        _streams = [_postDict valueForKey:@"streams"];
+        [[DAO sharedManager] getStreamsFromArray:_streams];
+         [self backgroundVideoOrImage];
+        
+    }];
+    
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults synchronize];
@@ -37,8 +46,7 @@
     NSTimer *blinkColonTimer = [NSTimer timerWithTimeInterval:2 target:self selector:@selector(blinkColon) userInfo:nil repeats:YES];
     NSRunLoop *blinkRunner = [NSRunLoop currentRunLoop];
     [blinkRunner addTimer:blinkColonTimer forMode: NSDefaultRunLoopMode]; //timer to blink the colon, currently not working
-    
-    [self backgroundVideoOrImage];
+
     [self loadUserDefaults];
 
 }
@@ -49,31 +57,10 @@
     
     if ([defaults boolForKey:@"hideBackgroundImage"] == YES){
         
+
         
-        NSDictionary *liveStreamURLDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:
-                                                 @"http://video4.earthcam.com/fecnetwork/6593.flv/playlist.m3u8",@"Copacabana Beach",
-                                                 @"http://video4.earthcam.com:1935/fecnetwork/AbbeyRoadHD1.flv/playlist.m3u8",@"Abbey Road",
-                                                 @"http://video4.earthcam.com/fecnetwork/5868.flv/playlist.m3u8",@"The Palm Atlantis",
-                                                 @"http://video4.earthcam.com/fecnetwork/4518.flv/playlist.m3u8",@"Amman City",
-                                                 @"http://iphone-streaming.ustream.tv/uhls/18795832/streams/live/iphone/playlist.m3u8",@"Crimera Roads",
-                                                 @"http://video4.earthcam.com/fecnetwork/5358.flv/playlist.m3u8",@"Costa Rica",
-                                                 @"http://video4.earthcam.com:1935/fecnetwork/statueoflibertyHD.flv/playlist.m3u8",@"Statue of Liberty",
-                                                 @"http://video4.earthcam.com/fecnetwork/7393.flv/playlist.m3u8",@"Anguilla Aleta Hotel",
-                                                 @"http://video4.earthcam.com:1935/fecnetwork/7524.flv/playlist.m3u8",@"Reunion Tower",
-                                                 @"http://video4.earthcam.com/fecnetwork/7132.flv/playlist.m3u8", @"Washington Monument",
-                                                 @"http://video4.earthcam.com:1935/fecnetwork/6391.flv/playlist.m3u8", @"Palm Beach",
-                                                 @"http://video4.earthcam.com:1935/fecnetwork/5288.flv/playlist.m3u8", @"Bognor Regis",
-                                                 @"http://video4.earthcam.com:1935/fecnetwork/4904.flv/playlist.m3u8", @"Holden Beach",
-                                                 @"http://video4.earthcam.com:1935/fecnetwork/4465.flv/playlist.m3u8", @"Lake Michigan",
-                                                 @"http://video4.earthcam.com:1935/fecnetwork/5423.flv/playlist.m3u8", @"Seaside Park",
-                                                 @"http://video4.earthcam.com:1935/fecnetwork/4617.flv/playlist.m3u8", @"Kauai",
-                                                 @"http://video4.earthcam.com:1935/fecnetwork/5758.flv/playlist.m3u8", @"Waikiloa",
-                                                 @"http://video4.earthcam.com:1935/fecnetwork/5966.flv/playlist.m3u8", @"St. Lucie County",
-                                                 @"http://video4.earthcam.com:1935/fecnetwork/6076.flv/playlist.m3u8", @"St. Lucie County Inlet",
-                                                 @"http://video4.earthcam.com/fecnetwork/4098.flv/playlist.m3u8", @"Amsterdam",
-                                                 @"http://video4.earthcam.com/fecnetwork/hotelvictoria2.flv/playlist.m3u8", @"Hungary",                                             nil];
         
-        NSURL *videoURL = [NSURL URLWithString:[liveStreamURLDictionary objectForKey:[defaults objectForKey:@"videoStreamLocation"]]];
+        NSURL *videoURL = [NSURL URLWithString:[defaults objectForKey:@"videoStreamLocation"]];
         
         self.moviePlayer = [[MPMoviePlayerController alloc] initWithContentURL:videoURL];
         self.moviePlayer.controlStyle = MPMovieControlStyleNone;
@@ -129,7 +116,7 @@
 //    [dateFormatter setTimeStyle:NSDateFormatterShortStyle];
 //    [dateFormatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:[defaults objectForKey:@"setTimeZone"]]];
     NSDate *currentDate = [NSDate date];
-    NSLog(@"%@", [[NSUserDefaults standardUserDefaults] dictionaryRepresentation]);
+//    NSLog(@"%@", [[NSUserDefaults standardUserDefaults] dictionaryRepresentation]);
 
 //    NSString *dateString = [dateFormatter stringFromDate:currentDate];
     

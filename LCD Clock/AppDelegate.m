@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+@import Firebase;
 
 @interface AppDelegate ()
 
@@ -19,7 +20,17 @@
     // Override point for customization after application launch.
     
 //    self.window.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"sanfran.png"]];
+    [FIRApp configure];
     
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"HasLaunchedOnce"])
+    {
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"HasLaunchedOnce"];
+        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"hideBackgroundImage"];
+        [[NSUserDefaults standardUserDefaults] setObject:@"FFFFFF" forKey:@"numberColor"];
+        [[NSUserDefaults standardUserDefaults] setObject:@"kamogawa2x.png" forKey:@"backgroundImageString"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
+
     return YES;
 }
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		75653613813F137DA78BCCAE /* libPods-LCD Clock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 26274BF16D1C2AAAC2FCD3BD /* libPods-LCD Clock.a */; };
 		B20A6E5F1CF4E0D200EF362D /* white.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B20A6E5E1CF4E0D200EF362D /* white.jpg */; };
 		B23288A01D0E389700FB6A32 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B28372921CEBECCA008854E1 /* Info.plist */; };
 		B23D50291CF38C0E001630E0 /* clock.png in Resources */ = {isa = PBXBuildFile; fileRef = B23D50281CF38C0E001630E0 /* clock.png */; };
@@ -39,6 +40,9 @@
 		B28373021CED5865008854E1 /* LCDClockMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = B28373011CED5865008854E1 /* LCDClockMenu.m */; };
 		B28373061CED6BC6008854E1 /* cogButton.png in Resources */ = {isa = PBXBuildFile; fileRef = B28373051CED6BC6008854E1 /* cogButton.png */; };
 		B28373081CEE4DDB008854E1 /* DigitalNumberObject.xib in Resources */ = {isa = PBXBuildFile; fileRef = B28373071CEE4DDA008854E1 /* DigitalNumberObject.xib */; };
+		B299F6F51D412A39001176D4 /* DAO.m in Sources */ = {isa = PBXBuildFile; fileRef = B299F6F41D412A39001176D4 /* DAO.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		B2AEFA4C1D305D5200A6FE17 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B2AEFA4B1D305D5200A6FE17 /* GoogleService-Info.plist */; };
+		B2AEFA4F1D32A6B400A6FE17 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B28372881CEBECCA008854E1 /* ViewController.m */; };
 		B2C606FD1CF79A7F00419CE6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2C606FB1CF79A7F00419CE6 /* Main.storyboard */; };
 		B2C606FF1CF7A01000419CE6 /* colon.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2C606FE1CF7A01000419CE6 /* colon.xib */; };
 /* End PBXBuildFile section */
@@ -61,6 +65,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		18CEF34DC8461B1919A19F2A /* Pods-LCD Clock.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LCD Clock.release.xcconfig"; path = "Pods/Target Support Files/Pods-LCD Clock/Pods-LCD Clock.release.xcconfig"; sourceTree = "<group>"; };
+		26274BF16D1C2AAAC2FCD3BD /* libPods-LCD Clock.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LCD Clock.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B20A6E5E1CF4E0D200EF362D /* white.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = white.jpg; path = colors/white.jpg; sourceTree = "<group>"; };
 		B23D50281CF38C0E001630E0 /* clock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = clock.png; path = colors/clock.png; sourceTree = "<group>"; };
 		B283727E1CEBECC9008854E1 /* LCD Clock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LCD Clock.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -102,8 +108,12 @@
 		B28373011CED5865008854E1 /* LCDClockMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCDClockMenu.m; sourceTree = "<group>"; };
 		B28373051CED6BC6008854E1 /* cogButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cogButton.png; path = "LCD Clock/colors/cogButton.png"; sourceTree = "<group>"; };
 		B28373071CEE4DDA008854E1 /* DigitalNumberObject.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DigitalNumberObject.xib; sourceTree = "<group>"; };
+		B299F6F31D412A39001176D4 /* DAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAO.h; sourceTree = "<group>"; };
+		B299F6F41D412A39001176D4 /* DAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAO.m; sourceTree = "<group>"; };
+		B2AEFA4B1D305D5200A6FE17 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B2C606FC1CF79A7F00419CE6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B2C606FE1CF7A01000419CE6 /* colon.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = colon.xib; sourceTree = "<group>"; };
+		CEB1594DF9093322746861EF /* Pods-LCD Clock.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LCD Clock.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LCD Clock/Pods-LCD Clock.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +121,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75653613813F137DA78BCCAE /* libPods-LCD Clock.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,6 +150,8 @@
 				B283729A1CEBECCA008854E1 /* LCD ClockTests */,
 				B28372A51CEBECCA008854E1 /* LCD ClockUITests */,
 				B283727F1CEBECC9008854E1 /* Products */,
+				DF5B63D88479A44749322E0D /* Pods */,
+				E19F1F63148BBE8721756E1B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -161,6 +174,8 @@
 				B28372851CEBECCA008854E1 /* AppDelegate.m */,
 				B28372871CEBECCA008854E1 /* ViewController.h */,
 				B28372881CEBECCA008854E1 /* ViewController.m */,
+				B299F6F31D412A39001176D4 /* DAO.h */,
+				B299F6F41D412A39001176D4 /* DAO.m */,
 				B2C606FB1CF79A7F00419CE6 /* Main.storyboard */,
 				B2C606FE1CF7A01000419CE6 /* colon.xib */,
 				B28373071CEE4DDA008854E1 /* DigitalNumberObject.xib */,
@@ -169,6 +184,7 @@
 				B283728D1CEBECCA008854E1 /* Assets.xcassets */,
 				B283728F1CEBECCA008854E1 /* LaunchScreen.storyboard */,
 				B28372921CEBECCA008854E1 /* Info.plist */,
+				B2AEFA4B1D305D5200A6FE17 /* GoogleService-Info.plist */,
 				B28372811CEBECCA008854E1 /* Supporting Files */,
 			);
 			path = "LCD Clock";
@@ -228,6 +244,23 @@
 			name = photos;
 			sourceTree = "<group>";
 		};
+		DF5B63D88479A44749322E0D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CEB1594DF9093322746861EF /* Pods-LCD Clock.debug.xcconfig */,
+				18CEF34DC8461B1919A19F2A /* Pods-LCD Clock.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E19F1F63148BBE8721756E1B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				26274BF16D1C2AAAC2FCD3BD /* libPods-LCD Clock.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -235,9 +268,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B28372AB1CEBECCA008854E1 /* Build configuration list for PBXNativeTarget "LCD Clock" */;
 			buildPhases = (
+				E17D1B1AB433E957B9FD76ED /* [CP] Check Pods Manifest.lock */,
 				B283727A1CEBECC9008854E1 /* Sources */,
 				B283727B1CEBECC9008854E1 /* Frameworks */,
 				B283727C1CEBECC9008854E1 /* Resources */,
+				7348232B85C0A2DAA4E5A4CC /* [CP] Embed Pods Frameworks */,
+				4A56082EC9888C5C9F374770 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -350,6 +386,7 @@
 				B28372FB1CED3A18008854E1 /* sanfran.png in Resources */,
 				B28372F21CED3A18008854E1 /* atlanta.png in Resources */,
 				B28372F81CED3A18008854E1 /* kamogawa.png in Resources */,
+				B2AEFA4C1D305D5200A6FE17 /* GoogleService-Info.plist in Resources */,
 				B283728E1CEBECCA008854E1 /* Assets.xcassets in Resources */,
 				B28372FD1CED3A18008854E1 /* sanfran3x.png in Resources */,
 				B28372E51CED370C008854E1 /* red.jpg in Resources */,
@@ -383,11 +420,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4A56082EC9888C5C9F374770 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LCD Clock/Pods-LCD Clock-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7348232B85C0A2DAA4E5A4CC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LCD Clock/Pods-LCD Clock-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E17D1B1AB433E957B9FD76ED /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B283727A1CEBECC9008854E1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B299F6F51D412A39001176D4 /* DAO.m in Sources */,
 				B28372891CEBECCA008854E1 /* ViewController.m in Sources */,
 				B28372B61CEBEF32008854E1 /* DigitalNumber.m in Sources */,
 				B28372861CEBECCA008854E1 /* AppDelegate.m in Sources */,
@@ -408,6 +494,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2AEFA4F1D32A6B400A6FE17 /* ViewController.m in Sources */,
 				B28372A71CEBECCA008854E1 /* LCD_ClockUITests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -531,6 +618,7 @@
 		};
 		B28372AC1CEBECCA008854E1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CEB1594DF9093322746861EF /* Pods-LCD Clock.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -546,6 +634,7 @@
 		};
 		B28372AD1CEBECCA008854E1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 18CEF34DC8461B1919A19F2A /* Pods-LCD Clock.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";

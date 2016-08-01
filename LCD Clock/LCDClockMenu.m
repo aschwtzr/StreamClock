@@ -19,6 +19,7 @@
     self.menuBackgroundImage.image = [UIImage imageNamed:[defaults objectForKey:@"backgroundImageString"]];
     self.menuBackgroundImage.contentMode = UIViewContentModeScaleAspectFill;
     self.menuBackgroundImage.contentMode = UIViewContentModeCenter;
+    _streamsArray = [[DAO sharedManager] streamsDAO];
     
     //sets the switches at their default state
         
@@ -47,12 +48,16 @@
     [defaults synchronize];
     
     if ([defaults boolForKey:@"streamToggle"] == YES){
-        self.pickerData = [[NSArray alloc] initWithObjects: @"Copacabana Beach", @"Abbey Road", @"The Palm Atlantis", @"Amman City", @"Crimera Roads", @"Costa Rica", @"Statue of Liberty", @"Anguilla Aleta Hotel", @"Reunion Tower", @"Washington Monument", @"Palm Beach", @"Bognor Regis", @"Holden Beach", @"Lake Michigan",  @"Seaside Park", @"Kauai", @"Waikiloa", @"St. Lucie County", @"St. Lucie County Inlet", @"Amsterdam", @"Hungary",nil];
-        self.timeOffset = [[NSArray alloc] initWithObjects:@"BRT", @"BST", @"EET", @"EET", @"EET", @"CST", @"EST", @"CLT", @"CST", @"EST", @"EST", @"BST", @"EST", @"CST", @"EST",@"HST", @"HST", @"EST",@"EST", @"CET", @"CET", nil];
+        
+        NSArray *locationsArray = [_streamsArray valueForKey:@"name"];
+        self.pickerData = locationsArray;
+        NSArray *timeZones = [_streamsArray valueForKey:@"time zone"];
+        self.timeOffset = timeZones;
         self.timeZonePicker.dataSource = self;
         self.timeZonePicker.delegate = self;
         [defaults setBool:YES forKey:@"hideBackgroundImage"];
         [defaults synchronize];
+
         
     }
     
@@ -81,10 +86,14 @@
     if ([self.liveStreamToggle isOn]) {
         [defaults setBool:YES forKey:@"streamToggle"];
         [defaults synchronize];
+        [self pickerDataSelector];
+
     }
     else {
         [defaults setBool:NO forKey:@"streamToggle"];
         [defaults synchronize];
+        [self pickerDataSelector];
+
     }
 
 }
@@ -149,7 +158,8 @@
     
     [defaults setObject:timeZonePicked forKey:@"setTimeZone"];
     if ([self.liveStreamToggle isOn]) {
-        NSString *videoStream = [self.pickerData objectAtIndex:[pickerView selectedRowInComponent:0]];
+        NSArray *urls = [_streamsArray valueForKey:@"url"];
+        NSString *videoStream = [urls objectAtIndex:[pickerView selectedRowInComponent:0]];
         [defaults setObject:videoStream forKey:@"videoStreamLocation"];
     }
         
@@ -160,7 +170,7 @@
 - (IBAction)setFontToGreenOne:(id)sender {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 
-    [defaults setObject:@"07F53E" forKey:@"numberColor"];
+    [defaults setObject:@"074A73" forKey:@"numberColor"];
     [defaults synchronize];
 
     
@@ -168,7 +178,7 @@
 - (IBAction)setFontToRed:(id)sender {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 
-    [defaults setObject:@"FE0000" forKey:@"numberColor"];
+    [defaults setObject:@"960000" forKey:@"numberColor"];
     [defaults synchronize];
 
 }
@@ -182,7 +192,7 @@
 - (IBAction)setFontToGreenTwo:(id)sender {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 
-    [defaults setObject:@"359B5D" forKey:@"numberColor"];
+    [defaults setObject:@"074A2F" forKey:@"numberColor"];
     [defaults synchronize];
 
 }

@@ -26,6 +26,13 @@
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>iphone-streaming.ustream.tv</key>
+			<string></string>
+			<key>video4.earthcam.com</key>
+			<string></string>
+		</dict>
 	</dict>
 	<key>UIAppFonts</key>
 	<array>
