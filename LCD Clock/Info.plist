@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>LSApplicationCategoryType</key>
+	<string>public.app-category.entertainment</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
@@ -28,9 +30,11 @@
 		<true/>
 		<key>NSExceptionDomains</key>
 		<dict>
-			<key>iphone-streaming.ustream.tv</key>
+			<key>https://crossorigin.me</key>
 			<string></string>
-			<key>video4.earthcam.com</key>
+			<key>earthcam.com</key>
+			<string></string>
+			<key>ustream.tv</key>
 			<string></string>
 		</dict>
 	</dict>
